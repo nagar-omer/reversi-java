@@ -1,0 +1,4 @@
+play against local player
+12
+.kn.k
+';k'l,
