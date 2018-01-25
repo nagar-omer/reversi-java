@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="JavaFXApp.jnlp">
+  <information>
+    <title>Reversi</title>
+    <vendor>Orly_Oved</vendor>
+    <description>JavaFXApp</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="JavaFXApp.jar" size="390490" download="eager" />
+  </resources>
+  <jfx:javafx-desc  width="900" height="600" main-class="ReversiGUI.Main"  name="JavaFXApp" />
+  <update check="background"/>
+</jnlp>

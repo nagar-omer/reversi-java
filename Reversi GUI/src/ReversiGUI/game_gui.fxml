@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.effect.GaussianBlur?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane minHeight="600.0" minWidth="900.0" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ReversiGUI.GameGui">
+   <children>
+      <GridPane gridLinesVisible="true" layoutX="124.0" layoutY="125.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="150.0" prefWidth="150.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="600.0" minWidth="600.0" prefWidth="600.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="440.0" minWidth="10.0" prefWidth="222.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="600.0" minHeight="600.0" prefHeight="600.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Pane maxHeight="540.0" maxWidth="540.0" minHeight="540.0" minWidth="540.0" prefHeight="540.0" prefWidth="540.0" GridPane.columnIndex="1">
+               <GridPane.margin>
+                  <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+               </GridPane.margin>
+               <children>
+                  <ImageView fitHeight="540.0" fitWidth="540.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@images/wood_board.jpg" />
+                     </image>
+                  </ImageView>
+                  <GridPane fx:id="gameBoardGrid" alignment="CENTER" gridLinesVisible="true" layoutX="1.279998779296875" layoutY="1.2800006866455078" maxHeight="540.0" maxWidth="540.0" minHeight="540.0" minWidth="540.0" prefHeight="540.0" prefWidth="540.0">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <effect>
+                        <GaussianBlur radius="0.78" />
+                     </effect>
+                  </GridPane>
+               </children>
+            </Pane>
+            <GridPane>
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="130.0" minHeight="130.0" prefHeight="130.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="120.0" minHeight="10.0" prefHeight="120.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="500.0" minHeight="100.0" prefHeight="160.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <padding>
+                  <Insets bottom="30.0" left="10.0" right="10.0" top="30.0" />
+               </padding>
+               <children>
+                  <ProgressBar fx:id="secondPlayerProgress" prefHeight="0.0" prefWidth="150.0" progress="0.0" />
+                  <VBox prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="2">
+                     <children>
+                        <Label fx:id="secondPlayerNameGame" text="Player Name">
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <HBox>
+                           <children>
+                              <Label text="Score:">
+                                 <padding>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </padding>
+                              </Label>
+                              <Label fx:id="secondPlayerScore" text="999">
+                                 <padding>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </padding>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <Circle fill="WHITE" radius="25.0" stroke="BLACK" strokeType="INSIDE" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                  <Label fx:id="secondCantPlay" text="Cant Play!" textFill="RED" visible="false" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </GridPane>
+            <GridPane layoutX="10.0" layoutY="10.0" GridPane.columnIndex="2">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="130.0" minHeight="130.0" prefHeight="130.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="120.0" minHeight="10.0" prefHeight="120.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="160.0" minHeight="100.0" prefHeight="160.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="407.0" minHeight="10.0" prefHeight="107.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <padding>
+                  <Insets bottom="30.0" left="10.0" right="10.0" top="30.0" />
+               </padding>
+               <children>
+                  <ProgressBar fx:id="firstPlayerProgress" prefHeight="0.0" prefWidth="150.0" progress="0.0" />
+                  <VBox prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="2">
+                     <children>
+                        <Label fx:id="firstPlayerNameGame" text="Player Name">
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <HBox>
+                           <children>
+                              <Label text="Score:">
+                                 <padding>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </padding>
+                              </Label>
+                              <Label fx:id="firstPlayerScore" text="999">
+                                 <padding>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </padding>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <Pane maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" onMouseClicked="#quitButtonAction" prefHeight="50.0" prefWidth="50.0" GridPane.halignment="CENTER" GridPane.rowIndex="4">
+                     <children>
+                        <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#a4080f" height="50.0" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="INSIDE" strokeWidth="3.0" width="50.0">
+                           <stroke>
+                              <RadialGradient centerX="0.4887640449438202" centerY="0.5" radius="1.0">
+                                 <stops>
+                                    <Stop color="#ffa5a5" />
+                                    <Stop color="#801616" offset="1.0" />
+                                 </stops>
+                              </RadialGradient>
+                           </stroke></Rectangle>
+                        <Circle centerX="25.0" centerY="25.0" fill="#a4080f" radius="15.0" stroke="#f8f0f0" strokeType="INSIDE" strokeWidth="6.0" />
+                        <Rectangle arcHeight="10.0" arcWidth="10.0" fill="#fff8f8" height="20.0" layoutX="21.0" layoutY="5.0" stroke="#a4080f" strokeType="INSIDE" width="8.0" />
+                     </children>
+                  </Pane>
+                  <Circle fill="#010d17" radius="25.0" stroke="#f5f3f3" strokeType="INSIDE" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                  <Label fx:id="firstCantPlay" alignment="CENTER" text="Cant Play!" textFill="RED" visible="false" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </GridPane>
+         </children>
+      </GridPane>
+      <Pane fx:id="gameEndedPane" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="170.0" AnchorPane.leftAnchor="320.0" AnchorPane.rightAnchor="320.0" AnchorPane.topAnchor="170.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="260.0" strokeType="INSIDE" strokeWidth="3.0" width="260.0">
+               <fill>
+                  <RadialGradient centerX="0.702247191011236" centerY="0.6971153846153846" cycleMethod="REFLECT" focusAngle="-108.89" focusDistance="0.11904761904761907" radius="0.6309523809523809">
+                     <stops>
+                        <Stop color="#a9dda8" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </RadialGradient>
+               </fill>
+               <stroke>
+                  <LinearGradient cycleMethod="REFLECT" endX="0.6442307692307692" endY="0.2548076923076923">
+                     <stops>
+                        <Stop color="#07510c" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </stroke>
+            </Rectangle>
+            <VBox alignment="CENTER" maxHeight="260.0" maxWidth="260.0" minHeight="260.0" minWidth="260.0" prefHeight="260.0" prefWidth="260.0">
+               <children>
+                  <Label fx:id="gameEndedLabel" text="The Winner Is" textFill="#033609">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="10.0" top="60.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label fx:id="winnerName" text="Winner Name">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Separator orientation="VERTICAL" prefHeight="200.0" visible="false" />
+                  <Button contentDisplay="TOP" mnemonicParsing="false" onAction="#switchBackToSetUp" text="Quit" textFill="#033609">
+                     <effect>
+                        <Blend />
+                     </effect>
+                     <VBox.margin>
+                        <Insets bottom="60.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
